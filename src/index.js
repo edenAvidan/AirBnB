@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { StayProvider } from "./stores/stay-context";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-  <App />
+  <StayProvider>
+    <App />
+  </StayProvider>
   // {/* </React.StrictMode> */ }
 );
 

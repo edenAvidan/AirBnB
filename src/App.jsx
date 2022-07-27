@@ -1,7 +1,10 @@
+import DestinationList from './cmps/DestinationList';
+import { useStayStore } from './stores/stay-context';
 
 const App = () => {
+  const { stays } = useStayStore();
   return (
-    <div>App</div>
+    <DestinationList stayList={stays} />
   )
 }
 
