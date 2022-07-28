@@ -1,10 +1,10 @@
-// BASICS
-@import 'basics/base';
-@import 'basics/helpers';
-
 // SETUP
 @import 'setup/functions';
 @import 'setup/variables';
+
+// BASICS
+@import 'basics/base';
+@import 'basics/helpers';
 
 // CMPS
 @import 'cmps/main-header';
