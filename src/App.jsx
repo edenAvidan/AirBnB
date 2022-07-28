@@ -1,3 +1,4 @@
+import './assets/scss/global.scss'
 import DestinationList from './cmps/DestinationList';
 import { useStayStore } from './stores/stay-context';
 
