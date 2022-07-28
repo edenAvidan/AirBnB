@@ -1,5 +1,16 @@
 .dest-preview {
     cursor: pointer;
+
+    .slick-arrow {
+        opacity: 0;
+    }
+
+    &:hover {
+        .slick-arrow {
+            opacity: 1;
+        }
+    }
+
     &-img-container {
         height: 250px;
         margin-bottom: 14px;
