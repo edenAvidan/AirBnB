@@ -1,9 +1,18 @@
 import search from '../assets/svgs/search.svg';
+import user from '../assets/svgs/user-avatar.svg';
+import nav from '../assets/svgs/hamburger.svg';
+import logo from '../assets/images/apple-touch-icon.png';
+import logoName from '../assets/images/logo-name.png';
+
 const MainHeader = () => {
   return (
     <div className="main-header">
       <section className="container flex justify-between align-center main-layout">
-        <div className="logo">airbnb</div>
+        <div className="logo flex align-center">
+          <img src={logo} alt="" />
+          {/* <img className="logo-name" src={logoName} alt="" /> */}
+          <span className="logo-name">airbnb</span>
+        </div>
         <div className="search-bar flex justify-around align-center">
           <div>Anywhere</div>
           <div>Any week</div>
@@ -12,7 +21,10 @@ const MainHeader = () => {
             <img src={search} alt="" />
           </div>
         </div>
-        <div className="log-in flex align-center">Login</div>
+        <div className="log-in flex align-center">
+          <img className="nav" src={nav} alt="" />
+          <img className="user" src={user} alt="" />
+        </div>
       </section>
     </div>
   );
