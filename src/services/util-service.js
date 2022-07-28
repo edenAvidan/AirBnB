@@ -2,7 +2,8 @@ export const utilService = {
   saveToStorage,
   loadFromStorage,
   makeId,
-  numberWithCommas
+  numberWithCommas,
+  getRandomInt
 }
 
 function saveToStorage(key, value) {
@@ -26,3 +27,9 @@ function makeId(length = 8) {
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 }
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
+};
