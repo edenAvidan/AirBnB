@@ -47,4 +47,28 @@
             width: 12px;
         }
     }
+
+    .slick-dots {
+        bottom: 23px;
+        li button::before {
+            color: $clr6;
+            opacity: 0.6;
+        }
+
+        .slick-active button::before {
+            color: $clr6;
+            opacity: 1;
+        }
+    }
+
+    .slick-next {
+        right: 10px;
+    }
+
+    .slick-prev {
+        left: 10px;
+        &:not(.slick-disabled) {
+            z-index: 20;
+        }
+    }
 }
