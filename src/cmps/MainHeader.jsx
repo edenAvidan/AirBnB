@@ -1,8 +1,5 @@
-
 const MainHeader = () => {
-    return (
-        <div>MainHeader</div>
-    )
-}
+  return <div className="main-header">MainHeader</div>;
+};
 
-export default MainHeader
+export default MainHeader;
