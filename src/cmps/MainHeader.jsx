@@ -1,8 +1,9 @@
 import search from '../assets/svgs/search.svg';
 import user from '../assets/svgs/user-avatar.svg';
 import nav from '../assets/svgs/hamburger.svg';
+import i18 from '../assets/svgs/i18.svg';
 import logo from '../assets/images/apple-touch-icon.png';
-import logoName from '../assets/images/logo-name.png';
+// import logoName from '../assets/images/logo-name.png';
 
 const MainHeader = () => {
   return (
@@ -21,9 +22,15 @@ const MainHeader = () => {
             <img src={search} alt="" />
           </div>
         </div>
-        <div className="log-in flex align-center">
-          <img className="nav" src={nav} alt="" />
-          <img className="user" src={user} alt="" />
+        <div className="user-setting flex align-center justify-between justify-center">
+          <div className="i18-container flex align-center ">
+            <img className="i18" src={i18} alt="" />
+          </div>
+          <div>Become a Host</div>
+          <div className="log-in flex align-center">
+            <img className="nav" src={nav} alt="" />
+            <img className="user" src={user} alt="" />
+          </div>
         </div>
       </section>
     </div>
