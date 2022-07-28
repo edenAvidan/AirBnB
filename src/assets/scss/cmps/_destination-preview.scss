@@ -1,6 +1,16 @@
 .dest-preview {
+    p {
+        &:not(:last-of-type) {
+            margin-bottom: 7px;
+        }
+        &:last-of-type {
+            margin-top: 6px;
+        }
+    }
+
     &-img-container {
         height: 250px;
+        margin-bottom: 14px;
 
         img {
             height: 100%;
@@ -15,5 +25,9 @@
 
     &-info {
         font-size: 15px;
+    }
+
+    &-price {
+        font-weight: 800;
     }
 }
