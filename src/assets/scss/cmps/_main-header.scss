@@ -9,8 +9,15 @@
     height: inherit;
     .logo {
       color: #ff385c;
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: bolder;
+    }
+    .search-bar > * {
+      padding: 0 1rem;
+      &:not(:last-child) {
+        font-weight: 700;
+        border-right: 1px solid $clr5;
+      }
     }
   }
 }
