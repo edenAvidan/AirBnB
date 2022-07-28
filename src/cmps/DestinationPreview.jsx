@@ -1,6 +1,9 @@
 import StarRating from '../assets/svgs/star-rating.svg';
 import { useRef, useState } from 'react';
 import { utilService } from '../services/util-service';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const DestinationPreview = ({ stay }) => {
     const [currImgPos, setCurrImgPos] = useState(0);
@@ -17,12 +20,26 @@ const DestinationPreview = ({ stay }) => {
         return num % 1 === 0 ? `${num}.0` : num;
     }
 
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    };
+
     if (!stay) return <div>Loading...</div>;
     return (
         <section className="dest-preview" >
-            <div className="dest-preview-img-container" onClick={switchImage}>
+            {/* <div className="dest-preview-img-container" onClick={switchImage}>
                 <img src={require(`../assets/images/${stay.imgUrls[currImgPos]}`)} alt="" />
-            </div>
+            </div> */}
+
+            <Slider {...settings}>
+                {
+                    stay.imgUrls.map((imgUrl, idx) => <div key={idx} className="dest-preview-img-container"><img src={require(`../assets/images/${imgUrl}`)} alt="" /></div>)
+                }
+            </Slider>
 
             <div className='info-container'>
                 <section className="dest-preview-info">
