@@ -1,6 +1,4 @@
 import StarRating from '../assets/svgs/star-rating.svg';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import { Carousel } from 'react-responsive-carousel';
 import { useState } from 'react';
 import { utilService } from '../services/util-service';
 
@@ -11,12 +9,12 @@ const DestinationPreview = ({ stay }) => {
         return Math.floor(Math.random() * (max - min) + min);
     };
 
-    // const [currImgPos, setCurrImgPos] = useState(0);
+    const [currImgPos, setCurrImgPos] = useState(0);
 
-    // const switchImage = () => {
-    //     if (currImgPos + 1 < stay.imgUrls.length) setCurrImgPos(prevImgPos => prevImgPos + 1);
-    //     else setCurrImgPos(0);
-    // }
+    const switchImage = () => {
+        if (currImgPos + 1 < stay.imgUrls.length) setCurrImgPos(prevImgPos => prevImgPos + 1);
+        else setCurrImgPos(0);
+    }
 
     const getFormattedRating = (num) => {
         if (!num) return 'New'
@@ -41,11 +39,11 @@ const DestinationPreview = ({ stay }) => {
     if (!stay) return <div>Loading...</div>;
     return (
         <section className="dest-preview" >
-            {/* <div className="dest-preview-img-container" onClick={switchImage}>
+            <div className="dest-preview-img-container" onClick={switchImage}>
                 <img src={require(`../assets/images/${stay.imgUrls[currImgPos]}`)} alt="" />
-            </div> */}
+            </div>
 
-            <Carousel {...getConfigurableProps()}>
+            {/* <Carousel {...getConfigurableProps()}>
                 {
                     stay.imgUrls.map((imgUrl, idx) => (
                         <div key={idx} className="dest-preview-img-container">
@@ -53,7 +51,7 @@ const DestinationPreview = ({ stay }) => {
                         </div>
                     ))
                 }
-            </Carousel>
+            </Carousel> */}
 
             <div className='info-container'>
                 <section className="dest-preview-info">
