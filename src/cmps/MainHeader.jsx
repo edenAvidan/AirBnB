@@ -22,11 +22,11 @@ const MainHeader = () => {
             <img src={search} alt="" />
           </div>
         </div>
-        <div className="user-setting flex align-center justify-between justify-center">
-          <div className="i18-container flex align-center ">
+        <div className="user-setting flex align-center justify-between ">
+          <div className="host-link flex align-center">Become a Host</div>
+          <div className="i18-container flex align-center justify-center">
             <img className="i18" src={i18} alt="" />
           </div>
-          <div>Become a Host</div>
           <div className="log-in flex align-center">
             <img className="nav" src={nav} alt="" />
             <img className="user" src={user} alt="" />

@@ -61,12 +61,26 @@
       }
     }
     .user-setting {
+      .host-link {
+        font-family: cereal-book;
+        font-size: 15px;
+        font-weight: 600;
+        height: 100%;
+        border-radius: 22px;
+        cursor: pointer;
+        padding: 12px;
+        margin-inline-end: -3px;
+        &:hover {
+          background-color: $clr7;
+        }
+      }
       .i18-container {
         width: 47px;
         height: 47px;
         border-radius: 40px;
         cursor: pointer;
-        margin: 0 7px;
+        margin-inline-end: 7px;
+        justify-content: center;
         &:hover {
           background-color: $clr7;
         }
