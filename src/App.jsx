@@ -1,12 +1,16 @@
-import './assets/scss/global.scss'
+import './assets/scss/global.scss';
 import DestinationList from './cmps/DestinationList';
-import { useStayStore } from './stores/stay-context';
+import MainHeader from './cmps/MainHeader';
+import {useStayStore} from './stores/stay-context';
 
 const App = () => {
-  const { stays } = useStayStore();
+  const {stays} = useStayStore();
   return (
-    <DestinationList stayList={stays} />
-  )
-}
+    <>
+      <MainHeader />
+      <DestinationList stayList={stays} />
+    </>
+  );
+};
 
-export default App
+export default App;
