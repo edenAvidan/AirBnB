@@ -2,6 +2,7 @@ export const utilService = {
   saveToStorage,
   loadFromStorage,
   makeId,
+  numberWithCommas
 }
 
 function saveToStorage(key, value) {
@@ -20,4 +21,8 @@ function makeId(length = 8) {
     txt += possible.charAt(Math.floor(Math.random() * possible.length))
   }
   return txt
+}
+
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 }
