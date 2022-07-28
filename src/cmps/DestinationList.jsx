@@ -1,14 +1,15 @@
-import DestinationPreview from "./DestinationPreview.jsx";
+import DestinationPreview from './DestinationPreview.jsx';
 
-const DestinationList = ({ stayList }) => {
-    return (
-        <section className="dest-list">
-            <ul className="clean-list">
-                {stayList.map(stay => (<DestinationPreview stay={stay} key={stay._id} />))}
+const DestinationList = ({stayList}) => {
+  return (
+    <section className="dest-list main-layout">
+      <ul className="clean-list">
+        {stayList.map((stay) => (
+          <DestinationPreview stay={stay} key={stay._id} />
+        ))}
+      </ul>
+    </section>
+  );
+};
 
-            </ul>
-        </section>
-    )
-}
-
-export default DestinationList
+export default DestinationList;
