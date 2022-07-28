@@ -6,13 +6,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const DestinationPreview = ({ stay }) => {
-    const [currImgPos, setCurrImgPos] = useState(0);
-    const dist = useRef(utilService.getRandomInt(1, 10000))
-
-    const switchImage = () => {
-        if (currImgPos + 1 < stay.imgUrls.length) setCurrImgPos(prevImgPos => prevImgPos + 1);
-        else setCurrImgPos(0);
-    }
+    const [isHovered, setIsHovered] = useState(false);
+    const dist = useRef(utilService.getRandomInt(1, 10000));
 
     const getFormattedRating = (num) => {
         if (!num) return 'New'
@@ -20,22 +15,16 @@ const DestinationPreview = ({ stay }) => {
         return num % 1 === 0 ? `${num}.0` : num;
     }
 
-    const settings = {
+    const sliderSettings = {
         dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
-    };
+        infinite: false,
+        arrows: isHovered,
+    }
 
     if (!stay) return <div>Loading...</div>;
     return (
-        <section className="dest-preview" >
-            {/* <div className="dest-preview-img-container" onClick={switchImage}>
-                <img src={require(`../assets/images/${stay.imgUrls[currImgPos]}`)} alt="" />
-            </div> */}
-
-            <Slider {...settings}>
+        <section className="dest-preview" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+            <Slider {...sliderSettings}>
                 {
                     stay.imgUrls.map((imgUrl, idx) => <div key={idx} className="dest-preview-img-container"><img src={require(`../assets/images/${imgUrl}`)} alt="" /></div>)
                 }
