@@ -6,7 +6,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const DestinationPreview = ({ stay }) => {
-    const [isHovered, setIsHovered] = useState(false);
     const dist = useRef(utilService.getRandomInt(1, 10000));
 
     const getFormattedRating = (num) => {
@@ -15,16 +14,10 @@ const DestinationPreview = ({ stay }) => {
         return num % 1 === 0 ? `${num}.0` : num;
     }
 
-    const sliderSettings = {
-        dots: true,
-        infinite: false,
-        arrows: isHovered,
-    }
-
     if (!stay) return <div>Loading...</div>;
     return (
-        <section className="dest-preview" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-            <Slider {...sliderSettings}>
+        <section className='dest-preview'>
+            <Slider dots={true} infinite={false}>
                 {
                     stay.imgUrls.map((imgUrl, idx) => <div key={idx} className="dest-preview-img-container"><img src={require(`../assets/images/${imgUrl}`)} alt="" /></div>)
                 }
