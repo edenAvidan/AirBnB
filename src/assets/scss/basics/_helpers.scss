@@ -10,6 +10,11 @@
     margin: 0;
 }
 
-.bold {
-    color: $clr-bold;
+.bold-text {
+    color: $clr1;
+    font-weight: 600;
+}
+
+.light-text {
+    color: $clr2;
 }
