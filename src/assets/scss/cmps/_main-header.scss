@@ -60,21 +60,36 @@
         }
       }
     }
-    .log-in {
-      border: 1px solid $clr5;
-      border-radius: 40px;
-      padding: 5px 5px 5px 12px;
-      cursor: pointer;
-      &:hover {
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+    .user-setting {
+      .i18-container {
+        width: 47px;
+        height: 47px;
+        border-radius: 40px;
+        cursor: pointer;
+        margin: 0 7px;
+        &:hover {
+          background-color: $clr7;
+        }
+        .i18 {
+          width: 17px;
+        }
       }
-      .user {
-        height: 30px;
-        width: 30px;
-        margin-left: 12px;
-      }
-      .nav {
-        width: 17px;
+      .log-in {
+        border: 1px solid $clr5;
+        border-radius: 40px;
+        padding: 5px 5px 5px 12px;
+        cursor: pointer;
+        &:hover {
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+        }
+        .user {
+          height: 30px;
+          width: 30px;
+          margin-left: 12px;
+        }
+        .nav {
+          width: 17px;
+        }
       }
     }
   }
