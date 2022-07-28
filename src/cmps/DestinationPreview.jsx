@@ -16,8 +16,8 @@ const DestinationPreview = ({ stay }) => {
                     {stay.address.city}, {stay.address.country}
                 </p>
                 <p className="light-text">{getRandomInt(1, 10000)} kilometers away</p>
-                <p>Sep 20 - 25</p>
-                <p>{stay.price}₪ night</p>
+                <p className="light-text">Sep 20 - 25</p>
+                <p><span className='dest-preview-price bold-text'>${stay.price} USD</span> night</p>
             </section>
         </section>
     );
