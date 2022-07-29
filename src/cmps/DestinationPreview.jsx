@@ -2,9 +2,7 @@ import StarRating from '../assets/svgs/star-rating.svg';
 import { ReactComponent as LikeIcon } from '../assets/svgs/favorite.svg';
 import { useEffect } from 'react';
 import { utilService } from '../services/util-service';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import CostumeSlider from './costume-slider/CostumeSlider';
 
 const DestinationPreview = ({ stay, userLocation }) => {
   const getStayDistance = ({ lat, lan }) => {
@@ -28,16 +26,16 @@ const DestinationPreview = ({ stay, userLocation }) => {
     Array.from(elDots).map((dot) => (dot.disabled = true));
   }, []);
 
+  const sliderSettings = {
+    dots: true,
+    infinite: false,
+    draggable: false,
+  };
+
   if (!stay) return <div>Loading...</div>;
   return (
     <section className="dest-preview">
-      <Slider dots={true} infinite={false} draggable={false}>
-        {stay.imgUrls.map((imgUrl, idx) => (
-          <div key={idx} className="dest-preview-img-container">
-            <img src={require(`../assets/images/${imgUrl}`)} alt="" />
-          </div>
-        ))}
-      </Slider>
+      <CostumeSlider sliderSettings={sliderSettings} imgUrls={stay.imgUrls} />
       <LikeIcon className="like-icon" />
 
       <div className="info-container">
@@ -50,7 +48,7 @@ const DestinationPreview = ({ stay, userLocation }) => {
           </p>
           <p className="light-text">Sep 20 - 25</p>
           <p>
-            <span className="dest-preview-price bold-text">${stay.price}</span>
+            <span className="dest-preview-price bold-text">${stay.price} </span>
             night
           </p>
         </section>
