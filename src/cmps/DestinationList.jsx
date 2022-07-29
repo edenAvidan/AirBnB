@@ -7,7 +7,11 @@ const DestinationList = ({ stayList, userLocation }) => {
     <section className="dest-list main-layout">
       <ul className="clean-list">
         {stayListForRender.map((stay) => (
-          <DestinationPreview stay={stay} key={stay._id} userLocation={userLocation} />
+          <DestinationPreview
+            stay={stay}
+            key={stay._id}
+            userLocation={userLocation}
+          />
         ))}
       </ul>
     </section>
