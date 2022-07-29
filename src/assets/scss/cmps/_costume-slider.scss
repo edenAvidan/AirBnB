@@ -5,9 +5,13 @@
     margin: 0;
 
     button::before,
-    button:hover:not(.slick-active) {
+    button:hover {
       color: $clr6;
       opacity: 0.6;
+    }
+
+    &.slick-active button:hover {
+      opacity: 1;
     }
   }
 
