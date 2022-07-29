@@ -2,15 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { StayProvider } from "./stores/stay-context";
+import {StayProvider} from './stores/stay-context';
+import {HashRouter} from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
-  <StayProvider>
-    <App />
-  </StayProvider>
-  // </React.StrictMode> 
+  <HashRouter>
+    <StayProvider>
+      <App />
+    </StayProvider>
+  </HashRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
