@@ -3,8 +3,13 @@ import {useEffect, useState} from 'react';
 import DestinationList from '../cmps/DestinationList';
 
 const HomePage = () => {
-  const {stays} = useStayStore();
+  const {setStays, filteredStays} = useStayStore();
   const [userLocation, setUserLocation] = useState({lat: 0, long: 0});
+
+  useEffect(() => {
+    setStays();
+    // eslint-disable-next-line
+  }, []);
 
   const initGeoLocation = () => {
     if (navigator.geolocation) {
@@ -26,7 +31,12 @@ const HomePage = () => {
   }, []);
   return (
     <div>
-      <DestinationList stayList={stays} userLocation={userLocation} />
+      {filteredStays()?.length && (
+        <DestinationList
+          stayList={filteredStays()}
+          userLocation={userLocation}
+        />
+      )}
     </div>
   );
 };

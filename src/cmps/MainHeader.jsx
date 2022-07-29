@@ -5,7 +5,7 @@ import i18 from '../assets/svgs/i18.svg';
 import logo from '../assets/images/apple-touch-icon.png';
 // import logoName from '../assets/images/logo-name.png';
 
-const MainHeader = () => {
+const MainHeader = ({setFilterBy}) => {
   return (
     <div className="main-header">
       <section className="container flex justify-between align-center main-layout">
@@ -14,7 +14,7 @@ const MainHeader = () => {
           {/* <img className="logo-name" src={logoName} alt="" /> */}
           <span className="logo-name">airbnb</span>
         </div>
-        <SearchBar />
+        <SearchBar setFilterBy={setFilterBy} />
         <div className="user-setting flex align-center justify-between ">
           <div className="host-link flex align-center">Become a Host</div>
           <div className="i18-container flex align-center justify-center">
