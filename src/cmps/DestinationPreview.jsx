@@ -35,13 +35,6 @@ const DestinationPreview = ({ stay, userLocation }) => {
   if (!stay) return <div>Loading...</div>;
   return (
     <section className="dest-preview">
-      {/* <Slider {...sliderSettings}>
-        {stay.imgUrls.map((imgUrl, idx) => (
-          <div key={idx} className="dest-preview-img-container">
-            <img src={require(`../assets/images/${imgUrl}`)} alt="" />
-          </div>
-        ))}
-      </Slider> */}
       <CostumeSlider sliderSettings={sliderSettings} imgUrls={stay.imgUrls} />
       <LikeIcon className="like-icon" />
 
@@ -55,7 +48,7 @@ const DestinationPreview = ({ stay, userLocation }) => {
           </p>
           <p className="light-text">Sep 20 - 25</p>
           <p>
-            <span className="dest-preview-price bold-text">${stay.price}</span>
+            <span className="dest-preview-price bold-text">${stay.price} </span>
             night
           </p>
         </section>
