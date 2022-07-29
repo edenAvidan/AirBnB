@@ -1,10 +1,10 @@
-import StarRating from "../assets/svgs/star-rating.svg";
-import { ReactComponent as LikeIcon } from "../assets/svgs/favorite.svg";
-import { useEffect } from "react";
-import { utilService } from "../services/util-service";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import StarRating from '../assets/svgs/star-rating.svg';
+import { ReactComponent as LikeIcon } from '../assets/svgs/favorite.svg';
+import { useEffect } from 'react';
+import { utilService } from '../services/util-service';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const DestinationPreview = ({ stay, userLocation }) => {
   const getStayDistance = ({ lat, lan }) => {
@@ -18,13 +18,13 @@ const DestinationPreview = ({ stay, userLocation }) => {
   };
 
   const getFormattedRating = (num) => {
-    if (!num) return "New";
+    if (!num) return 'New';
     num /= 20; // changing from 1/100 to 1/5 rating.
     return num % 1 === 0 ? `${num}.0` : num;
   };
 
   useEffect(() => {
-    const elDots = document.querySelectorAll(".slick-dots li button");
+    const elDots = document.querySelectorAll('.slick-dots li button');
     Array.from(elDots).map((dot) => (dot.disabled = true));
   }, []);
 
@@ -50,7 +50,7 @@ const DestinationPreview = ({ stay, userLocation }) => {
           </p>
           <p className="light-text">Sep 20 - 25</p>
           <p>
-            <span className="dest-preview-price bold-text">${stay.price}</span>{" "}
+            <span className="dest-preview-price bold-text">${stay.price}</span>
             night
           </p>
         </section>
