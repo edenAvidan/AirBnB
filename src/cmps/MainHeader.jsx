@@ -1,4 +1,4 @@
-import search from '../assets/svgs/search.svg';
+import SearchBar from './SearchBar';
 import user from '../assets/svgs/user-avatar.svg';
 import nav from '../assets/svgs/hamburger.svg';
 import i18 from '../assets/svgs/i18.svg';
@@ -14,14 +14,7 @@ const MainHeader = () => {
           {/* <img className="logo-name" src={logoName} alt="" /> */}
           <span className="logo-name">airbnb</span>
         </div>
-        <div className="search-bar flex justify-around align-center">
-          <div>Anywhere</div>
-          <div>Any week</div>
-          <div>Add guests</div>
-          <div className="search-icon flex align-center justify-center">
-            <img src={search} alt="" />
-          </div>
-        </div>
+        <SearchBar />
         <div className="user-setting flex align-center justify-between ">
           <div className="host-link flex align-center">Become a Host</div>
           <div className="i18-container flex align-center justify-center">

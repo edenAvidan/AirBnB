@@ -1,0 +1,35 @@
+.search-bar {
+  box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
+  border-radius: 40px;
+  border: 1px solid $clr5;
+  transition: box-shadow 0.2s ease;
+  width: 352px;
+  cursor: pointer;
+  font-family: cereal-book;
+  font-size: 15px;
+  .search-icon {
+    justify-content: center;
+    background-color: $clr4;
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    color: $clr6;
+    margin: 7px 7px 7px 0;
+    img {
+      height: 14px;
+    }
+  }
+  &:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  }
+  & > * {
+    padding: 0 1rem;
+    &:nth-last-child(2) {
+      color: $clr2;
+    }
+    &:not(:nth-last-child(2)) {
+      font-weight: 600;
+      border-right: 1px solid $clr5;
+    }
+  }
+}
