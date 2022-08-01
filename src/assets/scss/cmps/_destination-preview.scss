@@ -53,17 +53,4 @@
   &-price {
     font-weight: 800;
   }
-
-  &-rating {
-    align-items: baseline;
-
-    span {
-      margin-left: 4px;
-    }
-
-    .rating-img {
-      height: 12px;
-      width: 12px;
-    }
-  }
 }

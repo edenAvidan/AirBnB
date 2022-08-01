@@ -48,3 +48,20 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+
+.rating {
+  align-items: baseline;
+
+  span {
+    margin-left: 4px;
+  }
+
+  .rating-img {
+    height: 12px;
+    width: 12px;
+  }
+}
+
+.underline {
+  text-decoration: underline;
+}
