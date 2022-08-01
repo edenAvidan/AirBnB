@@ -1,17 +1,17 @@
 .stay-details {
   padding-top: 24px;
+  font-family: circular-bold;
   .name {
     font-size: 26px;
     font-weight: 600;
     line-height: 30px;
-    font-family: circular-bold;
   }
   .details {
+    // height: 100vh;
     margin-top: 8px;
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
-    font-family: circular-bold;
   }
   .reviews {
     .text {
@@ -31,3 +31,61 @@
     }
   }
 }
+
+.grid-container {
+  img {
+    max-width: 100%;
+    min-height: 100%;
+  }
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    'area0 area0 area1 area2'
+    'area0 area0 area3 area4';
+  gap: 10px;
+  margin: 0 auto;
+  padding-top: 19px;
+  position: relative;
+  button {
+    position: absolute;
+    z-index: 5;
+    bottom: 24px;
+    right: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 7px 15px;
+    border: 1px solid $clr1;
+    border-radius: 8px;
+    cursor: pointer;
+    .phothNav {
+      margin-inline-end: 8px;
+      width: 15px;
+    }
+  }
+}
+.area0 {
+  grid-area: area0;
+  min-height: 336px;
+  border-radius: 10px 0 0 10px;
+}
+.area1 {
+  grid-area: area1;
+}
+.area2 {
+  border-radius: 0 10px 0 0;
+  grid-area: area2;
+}
+.area3 {
+  grid-area: area3;
+}
+.area4 {
+  border-radius: 0 0 10px 0;
+  grid-area: area4;
+}
+
+// .stickyyyyyy {
+//   position: sticky;
+//   top: 0px;
+//   padding: 10px 0px;
+//   z-index: 50;
+// }

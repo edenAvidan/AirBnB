@@ -6,6 +6,7 @@ import { stayService } from '../services/stay-service';
 import StarRating from '../assets/svgs/star-rating.svg';
 import save from '../assets/svgs/save.svg';
 import share from '../assets/svgs/share.svg';
+import phothNav from '../assets/svgs/photo-nav.svg';
 
 const StayDetails = () => {
   const { id } = useParams();
@@ -28,7 +29,7 @@ const StayDetails = () => {
       {stay && (
         <>
           <div className="name">{stay.name}</div>
-          <div className="details flex justify-between">
+          <div className="details flex justify-between align-center">
             <section className="flex">
               <div className="rating flex">
                 <img src={StarRating} className="rating-img" alt="" />
@@ -44,7 +45,7 @@ const StayDetails = () => {
               </div>
               <div className="underline">{stay.host.location}</div>
             </section>
-            <section className="actions flex justify-between">
+            <section className="actions flex justify-between align-center">
               <div className="share flex">
                 <img src={share} alt="" />{' '}
                 <span className="text underline">Share</span>
@@ -54,6 +55,22 @@ const StayDetails = () => {
                 <span className="text underline">Save</span>
               </div>
             </section>
+          </div>
+          <div className="gallery grid-container">
+            {stay.imgUrls.map((ref, idx) => {
+              return (
+                <img
+                  className={`area${idx}`}
+                  src={require(`../assets/images/${ref}`)}
+                  alt=""
+                />
+              );
+            })}
+
+            <button className="flex align-center">
+              <img className="phothNav" src={phothNav} alt="" />
+              Show all photos
+            </button>
           </div>
         </>
       )}
