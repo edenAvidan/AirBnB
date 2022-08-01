@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 const SliderArrow = ({ onClick, isPrev = false, isShown }) => {
   return (
     <div
