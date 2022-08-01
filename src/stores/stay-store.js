@@ -1,36 +1,19 @@
-import {makeAutoObservable} from 'mobx';
-import {stayService} from '../services/stay-service';
+import { makeAutoObservable, runInAction } from 'mobx';
+import { stayService } from '../services/stay-service';
 
-export function createStayStore(stays) {
-  return makeAutoObservable({
-    stays,
-    filterBy: {text: ''},
-    // loggedinUser: null,
-
-    getStay(id) {
-      return stays.find((stay) => stay._id === id);
-    },
-    filteredStays() {
-      return stays;
-    },
-    removeStay(id) {
-      stays = stays.filter((stay) => stay._id !== id);
-    },
-    AddStay(stay) {
-      stays.push(stay);
-    },
+const stayStore = () =>
+  makeAutoObservable({
+    stays: null,
+    filterBy: { text: '' },
     async setStays() {
-      const stayss = await stayService._loadStays();
-      stays = stayss;
+      const currStays = await stayService.loadStays();
+      runInAction(() => {
+        this.stays = currStays;
+      });
     },
-    // setFilter(filter) {
-    //   filterBy = {
-    //     ...filterBy,
-    //     filter,
-    //   };
-    // },
-    filterStays() {
-      return stays;
+    getStay(id) {
+      return this.stays.find((stay) => stay._id === id);
     },
   });
-}
+
+export default stayStore;

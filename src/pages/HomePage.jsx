@@ -1,13 +1,15 @@
-import {useStayStore} from '../stores/stay-context';
-import {useEffect, useState} from 'react';
+import { observer } from 'mobx-react-lite';
+import { useEffect, useState } from 'react';
 import DestinationList from '../cmps/DestinationList';
+import { useStore } from '../stores';
 
 const HomePage = () => {
-  const {setStays, filteredStays} = useStayStore();
-  const [userLocation, setUserLocation] = useState({lat: 0, long: 0});
+  // const { setStays, filteredStays } = useStayStore();
+  const [userLocation, setUserLocation] = useState({ lat: 0, long: 0 });
+  const { app } = useStore();
 
   useEffect(() => {
-    setStays();
+    app.setStays();
     // eslint-disable-next-line
   }, []);
 
@@ -17,8 +19,8 @@ const HomePage = () => {
     }
   };
 
-  const success = ({coords}) => {
-    setUserLocation({lat: coords.latitude, long: coords.longitude});
+  const success = ({ coords }) => {
+    setUserLocation({ lat: coords.latitude, long: coords.longitude });
   };
 
   const fail = () => {
@@ -31,14 +33,11 @@ const HomePage = () => {
   }, []);
   return (
     <div>
-      {filteredStays()?.length && (
-        <DestinationList
-          stayList={filteredStays()}
-          userLocation={userLocation}
-        />
+      {app.stays?.length && (
+        <DestinationList stayList={app.stays} userLocation={userLocation} />
       )}
     </div>
   );
 };
 
-export default HomePage;
+export default observer(HomePage);
