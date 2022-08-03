@@ -1,6 +1,15 @@
+import { useEffect } from 'react';
 import { ReactComponent as SearchIcon } from '../assets/svgs/search.svg';
 
 const FullSearchBar = ({ closeFullBar }) => {
+  useEffect(() => {
+    window.addEventListener('scroll', closeFullBar);
+
+    return () => {
+      window.removeEventListener('scroll', closeFullBar);
+    };
+  });
+
   return (
     <>
       <section className="full-search-bar-wrapper">

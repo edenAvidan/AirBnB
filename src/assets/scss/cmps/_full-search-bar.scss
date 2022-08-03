@@ -57,12 +57,12 @@
       background-color: #ddd;
       border-radius: 32px;
 
-      &::after {
+      &:not(.guests-container)::after {
         border-color: transparent;
       }
     }
 
-    &:after {
+    &:not(.guests-container):after {
       position: absolute;
       content: '';
       border-right: 1px solid #ddd;
