@@ -1,20 +1,29 @@
 import SearchBar from './SearchBar';
+import FullSearchBar from './FullSearchBar';
 import user from '../assets/svgs/user-avatar.svg';
 import nav from '../assets/svgs/hamburger.svg';
 import i18 from '../assets/svgs/i18.svg';
 import logo from '../assets/images/apple-touch-icon.png';
-// import logoName from '../assets/images/logo-name.png';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const MainHeader = ({setFilterBy}) => {
+const MainHeader = ({ setFilterBy }) => {
+  const [isFullBarOpened, setIsFullBarOpened] = useState(false);
+  const navigate = useNavigate();
+
+  const toggleFullBar = () => {
+    setIsFullBarOpened((prevIsOpen) => !prevIsOpen);
+  };
+
   return (
     <div className="main-header">
       <section className="container flex justify-between align-center main-layout">
-        <div className="logo flex align-center">
+        <div onClick={() => navigate('../')} className="logo flex align-center">
           <img src={logo} alt="" />
-          {/* <img className="logo-name" src={logoName} alt="" /> */}
           <span className="logo-name">airbnb</span>
         </div>
-        <SearchBar setFilterBy={setFilterBy} />
+        <SearchBar openFullBar={toggleFullBar} />
+        {isFullBarOpened && <FullSearchBar closeFullBar={toggleFullBar} />}
         <div className="user-setting flex align-center justify-between ">
           <div className="host-link flex align-center">Become a Host</div>
           <div className="i18-container flex align-center justify-center">

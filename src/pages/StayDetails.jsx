@@ -20,7 +20,7 @@ const StayDetails = () => {
   }, [id]);
 
   const getStayById = async (id) => {
-    const stay = await app.getStay(id);
+    const stay = await app.getStay(id); // need to actually get stay from DB if not avialable
     setStay(stay);
   };
 
@@ -38,9 +38,9 @@ const StayDetails = () => {
                 </span>
               </div>
               <div className="reviews">
-                <sapn className="text underline">
+                <span className="text underline">
                   {stay.reviews.length} reviews
-                </sapn>
+                </span>
                 <span className="dot">·</span>
               </div>
               <div className="underline">{stay.host.location}</div>

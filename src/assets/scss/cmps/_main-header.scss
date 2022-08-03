@@ -8,17 +8,15 @@
   z-index: 10;
   .container {
     height: inherit;
-    & > * {
-      height: 47px;
-    }
+
     .logo {
+      z-index: 30;
+      cursor: pointer;
       .logo-name {
         color: #ff385c;
         font-size: 1.5rem;
         font-weight: bolder;
         font-family: cereal-bold;
-        // height: 22px;
-        // width: 66px;
       }
       img {
         height: 41px;
@@ -26,6 +24,7 @@
       }
     }
     .user-setting {
+      z-index: 30;
       .host-link {
         font-family: cereal-book;
         font-size: 15px;
