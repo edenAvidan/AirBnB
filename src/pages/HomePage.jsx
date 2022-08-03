@@ -4,14 +4,8 @@ import DestinationList from '../cmps/DestinationList';
 import { useStore } from '../stores';
 
 const HomePage = () => {
-  // const { setStays, filteredStays } = useStayStore();
   const [userLocation, setUserLocation] = useState({ lat: 0, long: 0 });
   const { app } = useStore();
-
-  useEffect(() => {
-    app.setStays();
-    // eslint-disable-next-line
-  }, []);
 
   const initGeoLocation = () => {
     if (navigator.geolocation) {
@@ -31,6 +25,7 @@ const HomePage = () => {
     initGeoLocation();
     // eslint-disable-next-line
   }, []);
+
   return (
     <div>
       {app.stays?.length && (
