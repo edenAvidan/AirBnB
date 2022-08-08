@@ -1,18 +1,19 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useStore } from '../stores';
-// import { observer } from 'mobx-react-lite';
 import { stayService } from '../services/stay-service';
 import StarRating from '../assets/svgs/star-rating.svg';
 import save from '../assets/svgs/save.svg';
 import share from '../assets/svgs/share.svg';
 import phothNav from '../assets/svgs/photo-nav.svg';
+import ImgGallery from '../cmps/ImgGallery';
 
 const StayDetails = () => {
   const { id } = useParams();
   const { app } = useStore();
 
   const [stay, setStay] = useState();
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
   useEffect(() => {
     getStayById(id);
@@ -57,21 +58,28 @@ const StayDetails = () => {
             </section>
           </div>
           <div className="gallery grid-container">
-            {stay.imgUrls.map((ref, idx) => {
+            {stay.imgUrls.map((url, idx) => {
               return (
                 <img
+                  onClick={() => setIsGalleryOpen(true)}
                   className={`area${idx}`}
-                  src={require(`../assets/images/${ref}`)}
+                  src={require(`../assets/images/${url}`)}
                   alt=""
                 />
               );
             })}
 
             <button className="flex align-center">
-              <img className="phothNav" src={phothNav} alt="" />
+              <img
+                onClick={() => setIsGalleryOpen(true)}
+                className="phothNav"
+                src={phothNav}
+                alt=""
+              />
               Show all photos
             </button>
           </div>
+          {isGalleryOpen && <ImgGallery imgs={stay.imgUrls} />}
         </>
       )}
     </div>
