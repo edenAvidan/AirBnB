@@ -61,6 +61,7 @@ const StayDetails = () => {
             {stay.imgUrls.map((url, idx) => {
               return (
                 <img
+                  key={url}
                   onClick={() => setIsGalleryOpen(true)}
                   className={`area${idx}`}
                   src={require(`../assets/images/${url}`)}
