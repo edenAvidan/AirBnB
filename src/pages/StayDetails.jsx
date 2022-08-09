@@ -71,12 +71,8 @@ const StayDetails = () => {
             })}
 
             <button className="flex align-center">
-              <img
-                onClick={() => setIsGalleryOpen(true)}
-                className="phothNav"
-                src={phothNav}
-                alt=""
-              />
+              onClick={() => setIsGalleryOpen(true)}
+              <img className="phothNav" src={phothNav} alt="" />
               Show all photos
             </button>
           </div>
