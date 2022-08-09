@@ -83,5 +83,4 @@ const StayDetails = () => {
   );
 };
 
-// export default observer(StayDetails);
 export default StayDetails;
