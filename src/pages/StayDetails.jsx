@@ -70,8 +70,10 @@ const StayDetails = () => {
               );
             })}
 
-            <button className="flex align-center">
+            <button
+              className="flex align-center"
               onClick={() => setIsGalleryOpen(true)}
+            >
               <img className="phothNav" src={phothNav} alt="" />
               Show all photos
             </button>
